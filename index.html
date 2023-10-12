@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <lang:english></lang:english> 
+      <title><font> helvetica </font>
+      {underdevelopment} 
+    </title>
     <style>
-        body {
-            font-family: helvetica,
-            background-color: #f4f4f4;
-        }
-
-        .profile {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-
-        .profile h1 {
-            text-align: center;
-        }
-
-        .social-links {
-            text-align: center;
-        }
-
-        .social-link {
-            margin: 10px;
-        }
-
-        .social-link a {
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-        }
-
-        .social-link i {
-            margin-right: 5px;
-            font-size: 24px;
-        }
+body {
+    background: #18d0f0;
+}
+#smoke {
+  position: absolute;
+  z-index: 3;
+  width: 1px; height: 160px;
+  left: 50%; bottom: 50%;
+}
+#smoke span { 
+  display: block;
+  position: absolute;
+  bottom: -35px; left: 50%; margin-left:-20px;
+  height: 0px; width: 0px;
+  border: 35px solid #4b4b4b;
+  border-radius: 35px;
+  left: -14px; opacity: 0;
+  transform: scale(0.2);
+}
+@keyframes smokeL {
+  0%   { transform: scale(0.2) translate(0, 0) }
+  10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+  100% { opacity: 0; transform: scale(1) translate(-20px, -130px) }
+}
+@keyframes smokeR {
+  0%   { transform: scale(0.2) translate(0, 0) }
+  10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+  100% { opacity: 0; transform: scale(1) translate(20px, -130px) }
+}
+#smoke .s0 { animation: smokeL 10s 0s infinite }
+#smoke .s1 { animation: smokeR 10s 1s infinite }
+#smoke .s2 { animation: smokeL 10s 2s infinite }
+#smoke .s3 { animation: smokeR 10s 3s infinite }
+#smoke .s4 { animation: smokeL 10s 4s infinite }
+#smoke .s5 { animation: smokeR 10s 5s infinite }
+#smoke .s6 { animation: smokeL 10s 6s infinite }
+#smoke .s7 { animation: smokeR 10s 7s infinite }
+#smoke .s8 { animation: smokeL 10s 8s infinite }
+#smoke .s9 { animation: smokeR 10s 9s infinite }
     </style>
 </head>
 <body>
-    <div class="profile">
-        <h1>Chetas Mahto</h1>
-        <div class="social-links">
-            <div class="social-link">
-                <a href="https://music.apple.com/profile/chetas" target="_blank">
-                    <i class="fab fa-applemusic-square"></i> Apple Music
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://twitter.com/XDcrystal69" target="_blank">
-                    <i class="fab fa-twitter-square"></i> Twitter
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://www.instagram.com/juan.tap.exe" target="_blank">
-                    <i class="fab fa-instagram-square"></i> Instagram
-                </a>
-            </div>
-            <!-- Add more social media links as needed -->
-        </div>
-    </div>
+    <div id="smoke">
+  <span class="s0"></span>
+  <span class="s1"></span>
+  <span class="s2"></span>
+  <span class="s3"></span>
+  <span class="s4"></span>
+  <span class="s5"></span>
+  <span class="s6"></span>
+  <span class="s7"></span>
+  <span class="s8"></span>
+  <span class="s9"></span>
+</div>
 </body>
 </html>
-
