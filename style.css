@@ -1,0 +1,79 @@
+/* General Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    
+    /* Use Flexbox to center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Profile Card */
+.profile {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.profile h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.profile .bio {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Social Links Container */
+.social-links {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 20px;
+    
+    /* Stack links vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* This adds space between the links */
+}
+
+/* Individual Link Button */
+.social-link {
+    display: block; /* Make the whole link clickable */
+    text-decoration: none;
+    color: #333;
+    background-color: #f0ead6;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-link i {
+    margin-right: 12px;
+    width: 20px; /* Helps align text */
+}
