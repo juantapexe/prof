@@ -1,3 +1,11 @@
+/* --- TRON: LEGACY THEME --- */
+
+/* 1. FONT
+   We're switching to a monospaced "computer" font 
+   to fit the digital theme.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+
 /* General Setup */
 * {
     box-sizing: border-box;
@@ -6,11 +14,15 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Rajdhani', 'Consolas', 'Monaco', monospace;
     
-    /* Use Flexbox to center content */
+    /* 2. THEME
+       Pure black background and high-contrast text.
+    */
+    background-color: #000000;
+    color: #ffffff;
+    
+    /* Center content */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,23 +33,38 @@ body {
 
 /* Profile Card */
 .profile {
+    /* 3. STYLE
+       Remove the old white card. We're on the grid now.
+    */
+    background-color: transparent;
+    box-shadow: none;
+    
     width: 90%;
     max-width: 500px;
     padding: 30px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
     text-align: center;
+    border: none; /* Remove any previous borders */
 }
 
 .profile h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 8px;
+    font-weight: 700;
+    
+    /* 4. GLOW
+       This is the key. We use text-shadow to create a neon glow.
+    */
+    color: #00FFFF; /* Cyan */
+    text-shadow: 
+        0 0 5px #00FFFF,
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF,
+        0 0 30px #00FFFF;
 }
 
 .profile .bio {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: #f0f0f0; /* Slightly off-white */
 }
 
 /* Social Links Container */
@@ -45,35 +72,47 @@ body {
     width: 90%;
     max-width: 500px;
     margin-top: 20px;
-    
-    /* Stack links vertically */
     display: flex;
     flex-direction: column;
-    gap: 15px; /* This adds space between the links */
+    gap: 15px;
 }
 
 /* Individual Link Button */
 .social-link {
-    display: block; /* Make the whole link clickable */
+    display: block;
     text-decoration: none;
-    color: #333;
-    background-color: #f0ead6;
+    
+    /* 5. BUTTON THEME
+       Transparent background with a glowing border.
+    */
+    background-color: transparent;
+    color: #00FFFF;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 10px #00FFFF;
+    
     padding: 15px 20px;
-    border-radius: 12px;
+    border-radius: 5px; /* Sharper, more digital corners */
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Smooth transition for the hover effect */
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-link:hover {
-    transform: scale(1.03); /* Slight zoom on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* 6. HOVER
+       Invert colors and intensify the glow, like a button
+       being activated.
+    */
+    background-color: #00FFFF;
+    color: #000000;
+    box-shadow: 
+        0 0 15px #00FFFF,
+        0 0 25px #00FFFF;
 }
 
 .social-link i {
     margin-right: 12px;
-    width: 20px; /* Helps align text */
+    width: 20px;
 }
