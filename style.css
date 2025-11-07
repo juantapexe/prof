@@ -1,12 +1,7 @@
-/* --- TRON: LEGACY THEME --- */
 
-/* 1. FONT
-   We're switching to a monospaced "computer" font 
-   to fit the digital theme.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
 
-/* General Setup */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,13 +11,11 @@
 body {
     font-family: 'Rajdhani', 'Consolas', 'Monaco', monospace;
     
-    /* 2. THEME
-       Pure black background and high-contrast text.
-    */
+
     background-color: #000000;
     color: #ffffff;
     
-    /* Center content */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,11 +24,9 @@ body {
     padding: 20px;
 }
 
-/* Profile Card */
+
 .profile {
-    /* 3. STYLE
-       Remove the old white card. We're on the grid now.
-    */
+
     background-color: transparent;
     box-shadow: none;
     
@@ -43,7 +34,7 @@ body {
     max-width: 500px;
     padding: 30px;
     text-align: center;
-    border: none; /* Remove any previous borders */
+    border: none;
 }
 
 .profile h1 {
@@ -51,10 +42,8 @@ body {
     margin-bottom: 8px;
     font-weight: 700;
     
-    /* 4. GLOW
-       This is the key. We use text-shadow to create a neon glow.
-    */
-    color: #00FFFF; /* Cyan */
+ 
+    color: #00FFFF; 
     text-shadow: 
         0 0 5px #00FFFF,
         0 0 10px #00FFFF,
@@ -64,10 +53,10 @@ body {
 
 .profile .bio {
     font-size: 1.2rem;
-    color: #f0f0f0; /* Slightly off-white */
+    color: #f0f0f0; 
 }
 
-/* Social Links Container */
+
 .social-links {
     width: 90%;
     max-width: 500px;
@@ -77,34 +66,29 @@ body {
     gap: 15px;
 }
 
-/* Individual Link Button */
+
 .social-link {
     display: block;
     text-decoration: none;
     
-    /* 5. BUTTON THEME
-       Transparent background with a glowing border.
-    */
+
     background-color: transparent;
     color: #00FFFF;
     border: 2px solid #00FFFF;
     box-shadow: 0 0 10px #00FFFF;
     
     padding: 15px 20px;
-    border-radius: 5px; /* Sharper, more digital corners */
+    border-radius: 5px; 
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
     
-    /* Smooth transition for the hover effect */
+   
     transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-link:hover {
-    /* 6. HOVER
-       Invert colors and intensify the glow, like a button
-       being activated.
-    */
+  
     background-color: #00FFFF;
     color: #000000;
     box-shadow: 
