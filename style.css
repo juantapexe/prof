@@ -18,7 +18,6 @@ body {
         url('tron-bg.gif');
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed; 
     display: flex;
     flex-direction: column;
     align-items: center;
