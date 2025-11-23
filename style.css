@@ -38,6 +38,8 @@ body {
     padding: 30px;
     text-align: center;
     border: none;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .profile h1 {
