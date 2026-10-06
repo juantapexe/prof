@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,120 +7,130 @@
 }
 
 body {
-    font-family: 'Rajdhani', 'Consolas', 'Monaco', monospace;
-    color: #ffffff;
-    
-    background-color: #000000; 
+    font-family: 'Share Tech Mono', 'Consolas', monospace;
+    color: #00FF66; /* Classic aviation PFD/HUD green */
+    background-color: #050b07;
+    /* Subtle radar grid background effect */
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url('tron-bg.gif');
-    background-size: cover;
-    background-position: center center;
+        linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
 }
 
-
+/* Simulated Artificial Horizon / HUD bracket lines */
+.flight-deck-hud {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px dashed rgba(0, 255, 102, 0.2);
+    pointer-events: none;
+}
+.flight-deck-hud::before, .flight-deck-hud::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: rgba(0, 255, 102, 0.5);
+    border-style: solid;
+}
+.flight-deck-hud::before { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.flight-deck-hud::after { top: 0; right: 0; border-width: 2px 2px 0 0; }
 
 .profile {
-
-    background-color: transparent;
-    box-shadow: none;
-    
+    background: rgba(0, 20, 10, 0.6);
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);
     width: 90%;
-    max-width: 500px;
+    max-width: 480px;
     padding: 30px;
     text-align: center;
-    border: none;
+    border-radius: 4px;
     transform-style: preserve-3d;
     perspective: 1000px;
+    backdrop-filter: blur(4px);
+}
+
+.avionics-tag {
+    font-size: 0.85rem;
+    color: #00aa44;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
 .profile h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 8px;
     font-weight: 700;
-    
- 
-    color: #00FFFF; 
-    text-shadow: 
-        0 0 5px #00FFFF,
-        0 0 10px #00FFFF,
-        0 0 20px #00FFFF,
-        0 0 30px #00FFFF;
+    color: #00FF66;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
 }
 
 .profile .bio {
-    font-size: 1.2rem;
-    color: #f0f0f0; 
+    font-size: 1.1rem;
+    color: #88ffbb;
+    letter-spacing: 1px;
 }
-
 
 .social-links {
     width: 90%;
-    max-width: 500px;
+    max-width: 480px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
-
 
 .social-link {
     display: block;
     text-decoration: none;
-    
-
-    background-color: transparent;
-    color: #00FFFF;
-    border: 2px solid #00FFFF;
-    box-shadow: 0 0 10px #00FFFF;
-    
-    padding: 15px 20px;
-    border-radius: 5px; 
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-align: center;
-    
-   
-    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    background-color: rgba(0, 10, 5, 0.8);
+    color: #00FF66;
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    box-shadow: inset 0 0 5px rgba(0, 255, 102, 0.1);
+    padding: 14px 20px;
+    border-radius: 3px;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-align: left;
+    transition: all 0.2s ease;
 }
 
 .social-link:hover {
-  
-    background-color: #00FFFF;
+    background-color: #00FF66;
     color: #000000;
-    box-shadow: 
-        0 0 15px #00FFFF,
-        0 0 25px #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.8);
+    padding-left: 25px; /* Slide effect on hover */
 }
 
 .social-link i {
     margin-right: 12px;
     width: 20px;
 }
+
+/* CRT / Avionics Scanline Overlay */
 body::after {
     content: " ";
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background: linear-gradient(
         rgba(18, 16, 16, 0) 50%, 
-        rgba(0, 0, 0, 0.25) 50%
-    ), linear-gradient(
-        90deg, 
-        rgba(255, 0, 0, 0.06), 
-        rgba(0, 255, 0, 0.02), 
-        rgba(0, 0, 255, 0.06)
+        rgba(0, 0, 0, 0.3) 50%
     );
-    z-index: 2;
-    background-size: 100% 2px, 3px 100%; 
+    z-index: 1000;
+    background-size: 100% 3px;
     pointer-events: none;
 }
